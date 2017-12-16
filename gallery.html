@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>B9-Project</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/cycle2.js"></script>
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+	<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+	}
+	#container {
+		width:100%;
+		position:relative;s
+		}
+	#slideshow {
+		height:100%;
+		width:100%;
+		}
+	#slideshow img {
+		height:100%;
+		width:100%;
+		position: absolute;
+		z-index:10;
+		min-width:100%;
+		min-height:100%;
+		}
+	#pager {
+		height:120px; 
+		width:100%;
+		background:rgba(0,0,0,0.5);
+		position:absolute;
+		bottom:5%;
+		z-index:1000;
+		text-align:center;
+		opacity:0;
+		transition:all .2s ease-in-out 0s;
+		}
+	#pager:hover {
+		opacity:1;
+		}
+	#pager img {
+		margin: 10px 5px;
+		opacity:0.3;
+		transition:all .3s ease-in-out 0s;
+		}
+	#pager img:hover {
+		opacity:1;
+		transform:scale(1.05);
+		z-index:100;
+		}
+	#prev_c {
+		height:100%;
+		width:200px;
+		position:absolute;
+		left:0;
+		top:0;
+		z-index:100;
+		}
+		#prev_c img {
+			height:120px;
+			width:120px;
+			position:absolute;
+			top:0;
+			bottom:0;
+			left:0;
+			margin:auto 0px;
+			}
+		
+	#next_c {
+		height:100%;
+		width:200px;
+		position:absolute;
+		right:0;
+		top:0;
+		z-index:100;
+		}
+		#next_c img {
+			height:120px;
+			width:120px;
+			position:absolute;
+			top:0;
+			bottom:0;
+			right:0;
+			margin:auto 0px;
+			}
+		#next #prev { visibility:hidden;}
+		#next,#prev:hover {
+			cursor:pointer;
+			}
+		#next_c,#prev_c:hover #next,#prev { visibility:visible;}
+		
+	</style>
+  </head>
+  <body>
+      <nav class="navbar navbar-inverse  navbar-fixed-top">
+      <div class="container">
+       <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" id="dp"  href="index.html">Department Of ISE</bold></a>
+        </div><bold>
+         
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Home<span class="sr-only">(current)</span></a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="faculty.html">Faculty</a></li>
+            <li class="active"><a href="gallery.html" class="animated bounce">Gallery</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Placements<span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+                  <li><a href="overview.html"><p>Overview</p></a></li>
+                  <li><a href="rp.html"><p>Recruiting Partners</p></a></li>
+                  <li><a href="testing.html"><p>Testing and Testimonials</p></a></li>
+                 </ul>
+              </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Syllabus<span class="caret"></span></a>
+               <ul class="dropdown-menu">
+                  <li><a href="img/second.pdf"><p  class="bg-primary animated slideInUp">Second Year</p></a></li>
+                  <li><a href="img/third.pdf"><p  class="bg-success animated slideInLeft">Third Year</p></a></li>
+                  <li><a href="img/fourth.pdf"><p class="bg-danger animated slideInRight">Fourth Year</p></a></li>
+               </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Developers<span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+                  <li><a href="https://www.facebook.com/VivekSwagger69/"><p  class="bg-danger animated bounceInUp">Bivek Kumar Jaiswal</p></a></li>
+                  <li><a href=""><p class="animated flash">Bharat Roshan</p></a></li>
+                  <li><a href="#"><p  class="animated flash">Soniya S</p></a></li>
+                  <li><a href="#"><p  class="animated flash">Rajya Lakshmi</p></a></li>
+                   <li><a href="#"><p  class="animated flash" >Rashmi V</p></a></li>
+                  <li><a href="#"><p  class="animated flash" >Mohammed JB</p></a></li>
+                </ul>
+              </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <br>
+    <br>
+    <br>
+    <div id="container">
+            
+           
+            <div id="slideshow" class="cycle-slideshow animated slideInDown" 
+            data-cycle-fx="fade" 
+            data-cycle-manual-fx="scrollHorz" 
+            data-cycle-pager-fx = "fade" 
+            data-cycle-manual-speed="400"
+            data-cycle-prev="#prev"  	
+            data-cycle-next="#next"
+            data-cycle-speed="600"  
+            data-cycle-timeout="3000" 
+            data-cycle-pager = "#pager" 
+            data-cycle-pager-template="<a href='#'><img src='{{src}}' width=150 height=100></a>"
+                > 
+                 
+                   <img src="img/ncet.jpeg" id="intro_img"/>
+				   <img src="img/52.jpg"/>
+		            <img src="img/03.jpg"/>
+                   <img src="img/inf2.png"/>
+                    <img src="img/inf1.jpg"/>
+                    <img src="img/inf3.jpg"/>
+                    <img src="img/inf4.jpg"/>
+                    <img src="img/inf7.jpg"/>
+                   </div>
+           
+                   <div id="pager"></div>
+                   
+                   <div id="prev_c"><img id="prev" src="img/prev1.svg"/></div>
+                   <div id="next_c"><img id="next" src="img/next1.svg"/></div>
+           </div>
+           
+           <script type="text/javascript">
+           
+           function height() {
+               var h = window.innerHeight;
+               var a = document.getElementById('container');
+               a.style.height = h+"px";
+               }
+               
+           window.addEventListener('load',height);
+           window.addEventListener('resize',height);
+           </script>
+           <div class="content clp">
+           </div>
+           <div class="container">&nbsp</div>
+           <footer id="myFooter">
+                <div class="container-fluid clp">
+                  <div class="row">
+                    <div class="col-sm-2">
+                      <h2 class="logo">
+                        <a href="https://www.ncet.co.in">
+                          <img src="img/logo.png">
+                        </a>
+                      </h2>
+                    </div>
+                    <div class="col-sm-4">
+                      <br>
+                      <h4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspAddress</h4>
+                      <ul>
+                        <p>🏠Mudugurki,Venkatagiri KotePost,Devanhalli,Bangalore</p>
+                          <p>📞Phone (India) : 080 6746 2700,701, 702</p>
+                          <p>📧E-mail : info@ncetmail.com</p>
+                      </ul>
+                    </div>
+            
+                    <div class="col-sm-3">
+                      <br>
+                      <h4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspAbout us</h4>
+                      <ul>
+                        <p>𐄁Autonomus College Under VTU</p>
+                        <p>𐄁It Is A Part Of Nagarjuna Group of Institutions</p>
+                        <p>𐄁“A” grade accreditation by NAAC</p>
+                      </ul>
+                    </div>
+            
+                    <div class="col-sm-3">
+                      <div class="social-networks">
+                        <h2 class="logo">
+                          <a href="http://www.spaneos.com/">
+                            <img src="img/sp.png">
+                          </a>
+                        </h2>
+                        <a href="https://www.twitter.com/principal_ncet" class="twitter">
+                          <i class="fa fa-twitter"></i>
+                        </a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <a href="https://www.facebook.com/Nagarjunacollege.Bangalore" class="facebook">
+                          <i class="fa fa-facebook"></i>
+                        </a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <a href="http://www.spaneous.com"><button type="button" class="btn btn-success">Contact us!</button></a>
+            
+                      </div>
+                    </div>
+                  </div>
+            
+              </footer>
+         <div class="container-fluid">&copy(copyright) Created By B-9 Group As A Project For Spaneous</div>
+      
+          
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/animate.css">
+    
+</body>
+<html>
